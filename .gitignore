@@ -4,3 +4,6 @@ secrets.yaml
 # Ignore database (LOGS) # 
 home-assistant_v2.db
 home-assistant.log
+
+# Ignore .storage (auth keys) #
+.storage/
