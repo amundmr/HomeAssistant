@@ -1,0 +1,69 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+#lovelace: 
+#  mode: yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+counter: !include counters.yaml
+sensor: !include sensors.yaml
+homeassistant:
+  customize: !include customize.yaml
+
+frontend:
+  themes: !include themes.yaml
+
+pi_hole:
+  - host: '192.168.1.200'
+
+# Router
+asuswrt:
+  host: 192.168.1.5
+  username: admin
+  password: !secret router
+  protocol: ssh
+
+# Presence detection via Router
+device_tracker:
+  - platform: asuswrt
+    consider_home: 30
+    interval_seconds: 15
+    new_device_defaults:
+      track_new_devices: false
+      hide_if_away: false
+
+# Persons
+# https://www.home-assistant.io/integrations/person/
+person:
+  - name: Maria
+    id: maria
+    user_id: 07b1cde5688044539085caa622cac902
+    device_trackers:
+      - device_tracker.iphone
+  - name: Amund
+    id: amund
+    user_id: ac65c32925f04422a8c7d6a6a2ea310a
+    device_trackers:
+      - device_tracker.redminote7_redmi
+
+# Xiaomi gateway
+# https://www.home-assistant.io/integrations/xiaomi_aqara/
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_gateway
+
+# Yeelights
+# https://www.home-assistant.io/integrations/yeelight/
+yeelight: !include yeelight.yaml

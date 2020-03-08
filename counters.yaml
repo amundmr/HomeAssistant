@@ -1,0 +1,15 @@
+door:
+  name: Door openings since 29/02
+  icon: mdi:door-open
+
+refrigerator:
+  name: Refrigerator openings since 29/02
+  icon: mdi:fridge
+
+lightswitch:
+  name: Lightswitch presses since 29/02
+  icon: mdi:gesture-tap-button
+
+cubeflip90:
+  name: Cube 90 deg flips since 29/02
+  icon: mdi:screen-rotation

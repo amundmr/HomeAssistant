@@ -1,0 +1,16 @@
+resources:
+  #Enabling any of these makes the overview go blank
+  # Mini Graph Card
+  # https://github.com/kalkih/mini-graph-card
+  #- url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+  #  type: module
+  
+  # Custom Header
+  # https://maykar.github.io/custom-header/#installation/hacs
+  #- url: /community_plugin/custom-header/custom-header.js
+  #  type: module
+
+  # Weather Card
+  # https://github.com/bramkragten/weather-card/
+  #- url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
+  #  type: module

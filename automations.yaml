@@ -1,0 +1,75 @@
+# THEMES
+- alias: "Setting darkmode after sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "00:05:00"
+  action:
+    service: frontend.set_theme
+    data:
+      name: midnight
+
+- alias: "Setting brightmode after sunrise"
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "00:05:00"
+  action:
+    service: frontend.set_theme
+    data:
+      name: default
+
+- alias: "Setting theme at startup"
+  trigger:
+    platform: homeassistant
+    event: start
+  condition: 
+    condition: state  # from sunset until sunrise
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+    service: frontend.set_theme
+    data:
+      name: midnight
+
+# COUNTERS
+- alias: Count door openings
+  trigger:
+    - entity_id: binary_sensor.door_window_sensor_158d000276771c
+      platform: state
+      to: 'on'
+  action:
+    service: counter.increment
+    entity_id: counter.door
+
+- alias: Count refrigerator openings
+  trigger:
+    - entity_id: binary_sensor.door_window_sensor_158d0002a12a69
+      platform: state
+      to: 'on'
+  action:
+    service: counter.increment
+    entity_id: counter.refrigerator
+
+- alias: Count lightswitch presses
+  trigger:
+      platform: event
+      event_type: xiaomi_aqara.click #https://www.home-assistant.io/integrations/binary_sensor.xiaomi_aqara/
+      event_data:
+        entity_id: binary_sensor.switch_158d0002048d29
+        click_type: single #long_click_press, long_click_release, hold, single, double
+  action:
+    service: counter.increment
+    entity_id: counter.lightswitch
+  
+- alias: Count 90 deg cube flips
+  trigger:
+      platform: event
+      event_type: xiaomi_aqara.cube_action
+      event_data:
+        entity_id: binary_sensor.cube_158d000275dee9
+        action_type: flip90 #flip180, move, tap_twice, shake_air, swing, alert, free_fall, rotation (enable action_value)
+        #action_value: degrees #is a number defining degrees of rotation when used.
+  action:
+    service: counter.increment
+    entity_id: counter.cubeflip90

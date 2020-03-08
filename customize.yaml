@@ -1,0 +1,36 @@
+# Add an entry for each entity that you want to overwrite.
+# EDIT THIS FROM UI AS LOVELACE IS NOT CONFIGURED WITH CUSTOM YAML FILES
+# Hiding sensors from front UI
+binary_sensor.cube_158d000275dee9:
+  hidden: true
+  friendly_name: Cube
+
+binary_sensor.door_window_sensor_158d000276771c:
+  hidden: true
+  friendly_name: Door
+
+binary_sensor.door_window_sensor_158d0002a12a69:
+  hidden: true
+  friendly_name: Fridge
+
+binary_sensor.switch_158d0002048d29:
+  hidden: true
+  friendly_name: Light Switch
+
+binary_sensor.motion_sensor_158d00020b778b:
+  hidden: true
+  friendly_name: Hall Motion
+
+binary_sensor.updater:
+  hidden: true
+
+sensor.temperature_158d0002253007:
+  hidden: true
+  friendly_name: Temp.
+
+sensor.humidity_158d0002253007:
+  hidden: true
+  friendly_name: Humidity
+
+sensor.hacs:
+  hidden: true

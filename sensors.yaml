@@ -1,0 +1,77 @@
+# CPU Temp
+- platform: command_line
+  name: CPU Temp
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ "%.2f"|format(value|multiply(0.001)) }}'
+
+# Home tracking
+- platform: history_stats
+  name: Maria away from home
+  entity_id: device_tracker.iphone
+  state: 'not_home'
+  type: time
+  start: '{{0}}'
+  end: '{{ now() }}'
+
+- platform: history_stats
+  name: Maria at home
+  entity_id: device_tracker.iphone
+  state: 'home'
+  type: time
+  start: '{{0}}'
+  end: '{{ now() }}'
+
+- platform: history_stats
+  name: Amund away from home
+  entity_id: device_tracker.redminote7_redmi
+  state: 'not_home'
+  type: time
+  start: '{{0}}'
+  end: '{{ now() }}'
+  
+- platform: history_stats
+  name: Amund at home
+  entity_id: device_tracker.redminote7_redmi
+  state: 'home'
+  type: time
+  start: '{{0}}'
+  end: '{{ now() }}'
+
+- platform: template
+  sensors:
+    maria_time_away_ddhhss:
+      friendly_name: Maria away from home
+      icon_template: mdi:chart-line
+      value_template: "{% set hours = states('sensor.maria_away_from_home') | float %} 
+                      {% set days = (hours/24) | int %}
+                      {% set minutes = ((hours % 1) * 60) | int %}  
+                      {% set hours = (hours - (hours % 1) - days*24) | int %}  
+                      {{ '%02i:%02i:%02i'%(days,hours, minutes) }}"
+    
+    maria_home_ddhhss:
+      friendly_name: Maria at home
+      icon_template: mdi:chart-line
+      value_template: "{% set hours = states('sensor.maria_at_home') | float %} 
+                      {% set days = (hours/24) | int %}
+                      {% set minutes = ((hours % 1) * 60) | int %}  
+                      {% set hours = (hours - (hours % 1) - days*24) | int %}  
+                      {{ '%02i:%02i:%02i'%(days,hours, minutes) }}"
+
+    amund_time_away_ddhhss:
+      friendly_name: Amund away from home
+      icon_template: mdi:chart-line
+      value_template: "{% set hours = states('sensor.amund_away_from_home') | float %} 
+                      {% set days = (hours/24) | int %}
+                      {% set minutes = ((hours % 1) * 60) | int %}  
+                      {% set hours = (hours - (hours % 1) - days*24) | int %}  
+                      {{ '%02i:%02i:%02i'%(days,hours, minutes) }}"
+    
+    amund_home_ddhhss:
+      friendly_name: Amund at home
+      icon_template: mdi:chart-line
+      value_template: "{% set hours = states('sensor.amund_at_home') | float %} 
+                      {% set days = (hours/24) | int %}
+                      {% set minutes = ((hours % 1) * 60) | int %}  
+                      {% set hours = (hours - (hours % 1) - days*24) | int %}  
+                      {{ '%02i:%02i:%02i'%(days,hours, minutes) }}"
