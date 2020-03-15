@@ -1,0 +1,15 @@
+{
+    "body": {
+        "contact": [
+            "mailto:amund.raniseth@gmail.com"
+        ],
+        "key": {
+            "e": "AQAB",
+            "kty": "RSA",
+            "n": "1hmQE9TRr74JtulHOzLl9dTq72YvsckoMi-xIpRTPWDjXg4nl5gN6eE8xzzdALkcVOJLn11Iaf6s7o4QazQ61kjuYbmtLJ9T-ipl4WYWKJfeJuFgfg6txK1ipe0D_FeBdRIgVBBCDW7IgMAvtUI-LNq0q0aVMriIFdVnaFKdUy2WDNILiGz1C21kmHBTzTh7z6doNZbnvyekoj5LrpiGEShkpeukKZYwF2Cjvmby-uCKKTsa9WMJ6v4Rux2v0i8ffcvKwYSIc1eE6QdaTikp_nf1Ary4pwENUGBMwGGZeFNZoQ7tNGwrSNqtqCWPpAn6weQZmidW7pdIlrag6Ynfvw"
+        },
+        "status": "valid"
+    },
+    "terms_of_service": "https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf",
+    "uri": "https://acme-v02.api.letsencrypt.org/acme/acct/80641231"
+}

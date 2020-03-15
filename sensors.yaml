@@ -5,6 +5,17 @@
   unit_of_measurement: "°C"
   value_template: '{{ "%.2f"|format(value|multiply(0.001)) }}'
 
+# Shares & Stocks
+- platform: alpha_vantage
+  api_key: alpha_vantage
+  symbols:
+    - symbol: GOOGL
+      name: Google
+  foreign_exchange:
+    - name: EUR_USD
+      from: EUR
+      to: USD
+
 # Home tracking
 - platform: history_stats
   name: Maria away from home
