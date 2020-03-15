@@ -1,6 +1,5 @@
 # Phones
 iphone:
-  hide_if_away: false
   icon: mdi:cellphone-iphone
   mac: D4:90:9C:7D:42:E2
   name: MariaiPhone
@@ -8,7 +7,6 @@ iphone:
   track: true
 
 redminote7_redmi:
-  hide_if_away: false
   icon: mdi:cellphone
   mac: 20:34:FB:93:34:7C
   name: AmundRedmi
@@ -17,7 +15,6 @@ redminote7_redmi:
 
 # Xiaomi
 lumi_gateway_v3_miio83769283:
-  hide_if_away: false
   icon:
   mac: 78:11:DC:F9:7A:A5
   name: lumi-gateway-v3 miio83769283
@@ -25,7 +22,6 @@ lumi_gateway_v3_miio83769283:
   track: true
 
 yeelink_light_color1_miio57523416:
-  hide_if_away: false
   icon:
   mac: 34:CE:00:8B:C9:25
   name: Hall
@@ -33,7 +29,6 @@ yeelink_light_color1_miio57523416:
   track: true
 
 yeelink_light_color1_miio56539374:
-  hide_if_away: false
   icon:
   mac: 34:CE:00:84:DB:8F
   name: Stairs
@@ -42,7 +37,6 @@ yeelink_light_color1_miio56539374:
 
 # Ethernet
 raspberrypi:
-  hide_if_away: false
   icon:
   mac: B8:27:EB:55:54:20
   name: raspberrypi
@@ -50,7 +44,6 @@ raspberrypi:
   track: true
 
 desktop_l3b2hls:
-  hide_if_away: false
   icon:
   mac: 88:D7:F6:7D:FD:9C
   name: DESKTOP-L3B2HLS
@@ -59,7 +52,6 @@ desktop_l3b2hls:
 
 # Other devices
 e0_cb_bc_be_2e_79:
-  hide_if_away: false
   icon:
   mac: E0:CB:BC:BE:2E:79
   name: e0 cb bc be 2e 79
@@ -67,7 +59,6 @@ e0_cb_bc_be_2e_79:
   track: true
 
 chromecast:
-  hide_if_away: false
   icon:
   mac: F4:F5:E8:37:FA:1C
   name: Chromecast
@@ -75,7 +66,6 @@ chromecast:
   track: true
 
 amazon_1937e6068:
-  hide_if_away: false
   icon:
   mac: 68:37:E9:21:1B:DA
   name: amazon-1937e6068
@@ -84,7 +74,6 @@ amazon_1937e6068:
 
 # NEW UNCATEGORIZED
 ac_17_c8_10_13_45:
-  hide_if_away: false
   icon:
   mac: AC:17:C8:10:13:45
   name: ac 17 c8 10 13 45
@@ -92,7 +81,6 @@ ac_17_c8_10_13_45:
   track: false
 
 laptop_3hihtdte:
-  hide_if_away: false
   icon:
   mac: 10:F0:05:5F:BA:40
   name: LAPTOP-3HIHTDTE
@@ -100,7 +88,6 @@ laptop_3hihtdte:
   track: false
 
 c0_ee_fb_26_37_e4:
-  hide_if_away: false
   icon:
   mac: C0:EE:FB:26:37:E4
   name: c0 ee fb 26 37 e4
@@ -108,7 +95,6 @@ c0_ee_fb_26_37_e4:
   track: false
 
 amund_ux430ua:
-  hide_if_away: false
   icon:
   mac: 14:AB:C5:24:46:77
   name: amund-UX430UA

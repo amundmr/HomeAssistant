@@ -1,7 +1,7 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
-history:
+
 recorder:
   purge_keep_days: 14
   purge_interval: 2
@@ -28,6 +28,7 @@ homeassistant:
 
 frontend:
   themes: !include themes.yaml
+  javascript_version: latest
 
 pi_hole:
   - host: '192.168.1.200'
@@ -46,21 +47,7 @@ device_tracker:
     interval_seconds: 15
     new_device_defaults:
       track_new_devices: false
-      hide_if_away: false
 
-# Persons
-# https://www.home-assistant.io/integrations/person/
-person:
-  - name: Maria
-    id: maria
-    user_id: 07b1cde5688044539085caa622cac902
-    device_trackers:
-      - device_tracker.iphone
-  - name: Amund
-    id: amund
-    user_id: ac65c32925f04422a8c7d6a6a2ea310a
-    device_trackers:
-      - device_tracker.redminote7_redmi
 
 # Xiaomi gateway
 # https://www.home-assistant.io/integrations/xiaomi_aqara/

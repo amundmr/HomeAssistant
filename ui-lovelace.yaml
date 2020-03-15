@@ -1,4 +1,4 @@
-resources:
+#resources:
   #Enabling any of these makes the overview go blank
   # Mini Graph Card
   # https://github.com/kalkih/mini-graph-card
@@ -14,3 +14,126 @@ resources:
   # https://github.com/bramkragten/weather-card/
   #- url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
   #  type: module
+
+resources:
+  - type: module
+    url: /local/community/mini-graph-card/mini-graph-card-bundle.js?v=0.9.3
+  - type: module
+    url: /local/community/custom-header/custom-header.js
+  - type: module
+    url: /local/community/weather-card/weather-card.js
+
+title: Solskinnsveien
+views:
+
+  - badges:
+      - entity: person.maria
+      - entity: person.amund
+
+    cards:
+      - entity: media_player.livingroom
+        type: media-control
+
+      - entities:
+          - light.hall
+          - light.stairs
+          - light.gateway_light_7811dcf97aa5
+        show_header_toggle: false
+        title: Lights
+        type: entities
+
+      - entities:
+          - binary_sensor.door_window_sensor_158d000276771c
+          - binary_sensor.door_window_sensor_158d0002a12a69
+          - binary_sensor.motion_sensor_158d00020b778b
+          - binary_sensor.switch_158d0002048d29
+          - binary_sensor.cube_158d000275dee9
+        show_header_toggle: false
+        title: Sensors
+        type: entities
+        
+      - color_thresholds:
+          - color: '#f7421e'
+            value: 26
+          - color: '#f7e91e'
+            value: 24
+          - color: '#2fc900'
+            value: 22
+          - color: '#3281a8'
+            value: 19
+        entities:
+          - entity: sensor.temperature_158d0002253007
+            index: 0
+        name: Livingroom Temperature
+        show:
+          extrema: true
+          labels: true
+        type: 'custom:mini-graph-card'
+      - entities:
+          - entity: sensor.humidity_158d0002253007
+            index: 0
+            show_state: true
+        name: Livingroom Humidity
+        show:
+          labels: true
+        type: 'custom:mini-graph-card'
+      - entity: weather.solskinnsveien
+        icons: /local/community/weather-card/icons/
+        type: 'custom:weather-card'
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.pi_hole_ads_blocked_today
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+          - entity: sensor.pi_hole_dns_queries_today
+          - entity: sensor.pi_hole_dns_queries_forwarded
+          - entity: sensor.pi_hole_domains_blocked
+          - entity: sensor.pi_hole_seen_clients
+        show_header_toggle: false
+        title: PiHole
+        type: entities
+      - entities:
+          - entity: sensor.maria_home_ddhhss
+          - entity: sensor.maria_time_away_ddhhss
+          - entity: sensor.amund_home_ddhhss
+          - entity: sensor.amund_time_away_ddhhss
+        show_header_toggle: false
+        title: Home & Away
+        type: entities
+      - entities:
+          - entity: counter.door
+          - entity: counter.refrigerator
+          - entity: counter.lightswitch
+          - entity: counter.cubeflip90
+        show_header_toggle: false
+        title: Doors & Switches
+        type: entities
+      - color_thresholds:
+          - color: '#f7421e'
+            value: 60
+          - color: '#f7e91e'
+            value: 55
+          - color: '#2fc900'
+            value: 50
+        entities:
+          - entity: sensor.cpu_temp
+        name: Server CPU Temp
+        show:
+          extrema: true
+        type: 'custom:mini-graph-card'
+      - entities:
+          - entity: sensor.cpu_temp
+        type: 'custom:mini-graph-card'
+    icon: 'mdi:chart-bar'
+    path: stats
+    title: Stats
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.google
+        type: 'custom:mini-graph-card'
+    icon: 'mdi:chart-line'
+    path: shares
+    title: Shares
