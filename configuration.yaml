@@ -1,6 +1,7 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+history:
 recorder:
   purge_keep_days: 14
   purge_interval: 2
