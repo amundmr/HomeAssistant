@@ -1,0 +1,7 @@
+water_plants:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.mosfet_gate
+    - delay: 00:00:06               #Amount of time to water plants for. 4s ~= 1.5dL
+    - service: switch.turn_off
+      entity_id: switch.mosfet_gate

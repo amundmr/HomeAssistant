@@ -24,12 +24,13 @@ binary_sensor.motion_sensor_158d00020b778b:
 binary_sensor.updater:
   hidden: true
 
+#did you hide the mqtt sensors for the plant in the UI? If yes, no history will be stored. check if the plant sensors have that attribute (and remove it, if yes): hidden: true
 sensor.temperature_158d0002253007:
-  hidden: true
-  friendly_name: Temp.
+  hidden: false
+  friendly_name: Temperature
 
 sensor.humidity_158d0002253007:
-  hidden: true
+  hidden: false
   friendly_name: Humidity
 
 sensor.hacs:

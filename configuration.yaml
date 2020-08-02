@@ -59,3 +59,45 @@ xiaomi_aqara:
 # Yeelights
 # https://www.home-assistant.io/integrations/yeelight/
 yeelight: !include yeelight.yaml
+
+# Android IP Webcam
+# https://www.home-assistant.io/integrations/android_ip_webcam/
+android_ip_webcam:
+  - host: 192.168.1.209
+    port: 8080
+    username: Homecam
+    password: !secret android_ip_webcam
+    sensors:
+      - audio_connections
+      - battery_level
+      - battery_temp
+      - battery_voltage
+      - light
+      - motion
+      - pressure
+      - proximity
+      - sound
+      - video_connections
+    switches:
+      - exposure_lock
+      - ffc
+      - focus
+      - gps_active
+      - night_vision
+      - overlay
+      - torch
+      - whitebalance_lock
+      - video_recording
+
+# Plant Watering
+# Using GPIO to turn on MOSFET(thus a pump) for x sec https://www.home-assistant.io/integrations/rpi_gpio/
+switch:
+  - platform: rpi_gpio
+    ports: #Refers to GPIO #, not pin#. Ex: 17 below is pin11.
+      17: mosfet_gate
+        
+# Weather
+weather:
+  - platform: openweathermap
+    name: OpenWeatherMap
+    api_key: 3dc8ede494fbe8aa28d86a131f56cc2b

@@ -13,3 +13,7 @@ lightswitch:
 cubeflip90:
   name: Cube 90 deg flips since 29/02
   icon: mdi:screen-rotation
+
+plantwaterings:
+  name: Number of times plant has been watered
+  icon: mdi:water-pump

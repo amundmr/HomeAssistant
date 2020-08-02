@@ -73,3 +73,25 @@
   action:
     service: counter.increment
     entity_id: counter.cubeflip90
+
+- alias: Count plant waterings
+  trigger:
+      platform: state
+      entity_id: switch.mosfet_gate
+      from: 'off'
+      to: 'on'
+  action:
+    service: counter.increment
+    entity_id: counter.plantwaterings
+
+# WATER PLANTS
+- alias: Water Plants on Monday
+  trigger:
+    platform: time
+    at: '15:00:00'
+  condition:
+  - condition: time
+    weekday:
+    - mon
+  action:
+    - service: script.water_plants
